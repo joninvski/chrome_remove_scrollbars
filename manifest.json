@@ -1,11 +1,14 @@
 {
-  "name": "Remove Chrome scrollbars",
-  "version": "1.0",
-  "description": "The first extension that I made.",
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
-  "permissions": [
-    "http://api.flickr.com/"
-  ]
+    "name": "Remove Chrome scrollbars",
+        "version": "0.1",
+        "description": "Extension to remove scrollbars at specific sites (only youtube now)",
+        "browser_action": {
+            "default_icon": "16x16.png"
+        },
+        "content_scripts": [
+        { "matches": ["http://www.youtube.com/*"], "css": ["mystyle.css"] }
+    ],
+        "icons": { "16": "16x16.png",
+            "48": "48x48.png",
+            "128": "128x128.png" }
 }
