@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Remove scrollbar at sites</title>
+        <script type="text/javascript" src="urlList.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("#blockthistoo").click(function () {
+                GB.addBlockedSite($("#dontgothere").val());
+                $("#status").text("G'ON AND TRY IT.  ");
+                var prot = /\/\//g;
+                if ($("#dontgothere").val().match(prot)) {
+                    $("#status").append("<a href='" + $("#dontgothere").val() + "'>TRY ME</a>");
+                } else {
+                    $("#status").append("<a href='http://" + $("#dontgothere").val() + "'>TRY ME</a>");
+                }
+                showBlockList();
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <h2>WOULDN'T YOU RATHER WATCH MADNESS?</h2>
+        <p>BLOCK <input id="dontgothere" /> TOO! <input type="button" id="blockthistoo" value="SMASHING!" /></p>
+        <p id="status"></p>
+        <p id="blocklist"></p>
+        </div>
+    </body>
+</html>
